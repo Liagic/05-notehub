@@ -21,11 +21,10 @@ function App() {
     queryKey: ['notes', searchQuery, currentPage],
     queryFn: () => fetchNotes(searchQuery, currentPage),
     staleTime: 1000 * 60 * 5,
-    enabled: searchQuery !== '',
     placeholderData: keepPreviousData,
   });
   const notes = data?.notes ?? [];
-  const totalPages = data?.totalPage ?? 0;
+  const totalPages = data?.totalPages ?? 0;
   return (
     <div className={css.app}>
       <header className={css.toolbar}>

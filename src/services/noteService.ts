@@ -3,7 +3,7 @@ import type { Note } from '../types/note';
 
 interface NoteHubResponse {
   notes: Note[];
-  totalPage: number;
+  totalPages: number;
 }
 interface CreateNote {
   title: string;
