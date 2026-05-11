@@ -30,11 +30,11 @@ export const fetchNotes = async (
   });
   return response.data;
 };
-export const createNote = (note: CreateNote) => {
-  const response = noteAPI.post<Note>('/notes', note);
-  return response.data;
+export const createNote = async (note: CreateNote): Promise<Note> => {
+  const { data } = await noteAPI.post<Note>('/notes', note);
+  return data;
 };
-export const deleteNote = (noteID: string) => {
-  const response = noteAPI.delete<Note>(`/notes/${noteID}`);
-  return response.data;
+export const deleteNote = async (noteID: string) => {
+  const { data } = await noteAPI.delete<Note>(`/notes/${noteID}`);
+  return data;
 };
