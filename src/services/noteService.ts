@@ -21,7 +21,7 @@ export const fetchNotes = async (
   page: number = 1,
   perPage: number = 12
 ): Promise<NoteHubResponse> => {
-  const response = await noteAPI.get('/notes', {
+  const response = await noteAPI.get<NoteHubResponse>('/notes', {
     params: {
       search: searchText,
       page: page,
